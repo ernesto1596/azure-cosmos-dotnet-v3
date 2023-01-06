@@ -6763,6 +6763,8 @@ namespace Microsoft.Azure.Cosmos
             this.UseMultipleWriteLocations = this.ConnectionPolicy.UseMultipleWriteLocations && accountProperties.EnableMultipleWriteLocations;
 
             this.GlobalEndpointManager.InitializeAccountPropertiesAndStartBackgroundRefresh(accountProperties);
+            
+            this.GlobalEndpointManager.InitializeClientConfigBackgroundRefresh();
         }
 
         internal void CaptureSessionToken(DocumentServiceRequest request, DocumentServiceResponse response)
